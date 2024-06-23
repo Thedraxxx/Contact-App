@@ -1,3 +1,4 @@
+import 'package:contactapp/add.dart';
 import 'package:contactapp/contact_detail.dart';
 import 'package:flutter/material.dart';
 
@@ -28,18 +29,60 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List contactdetail = [
-    {'Name': 'Roshan Gurung', 'photo': 'Images/roshan.jpg','num':'9803030303'},
-    {'Name': 'Aishawarya Adhikari', 'photo': 'Images/aish.jpg','num':'9803030303'},
-    {'Name': 'Dipsan Kadariya', 'photo': 'Images/dipson.png','num':'9803030303'},
-    {'Name': 'Manish Shrestha', 'photo': 'Images/manis.jpg','num':'9803030303'},
-    {'Name': 'Prabesh Nepal', 'photo': 'Images/prabesh.jpeg','num':'9803030303'},
-    {'Name': 'Richa Adhikari', 'photo': 'Images/richa.jpg','num':'9803030303'},
-    {'Name': 'Tiks Chimariya', 'photo': 'Images/tiks.jpg','num':'9803030303'},
+    {
+      'Name': 'Roshan Gurung',
+      'photo': 'Images/roshan.jpg',
+      'num': '9803030303',
+      'e-mail': '',
+    },
+    {
+      "Name": 'Aishawarya Adhikari',
+      'photo': 'Images/aish.jpg',
+      'num': '9803030303',
+      'e-mail': '',
+    },
+    {
+      'Name': 'Dipsan Kadariya',
+      'photo': 'Images/dipson.png',
+      'num': '9803030303',
+      'e-mail': '',
+    },
+    {
+      'Name': 'Manish Shrestha',
+      'photo': 'Images/manis.jpg',
+      'num': '9803030303',
+      'e-mail': '',
+    },
+    {
+      'Name': 'Prabesh Nepal',
+      'photo': 'Images/prabesh.jpeg',
+      'num': '9803030303',
+      'e-mail': '',
+    },
+    {
+      'Name': 'Richa Adhikari',
+      'photo': 'Images/richa.jpg',
+      'num': '9803030303',
+      'e-mail': '',
+    },
+    {
+      'Name': 'Tiks Chimariya',
+      'photo': 'Images/tiks.jpg',
+      'num': '9803030303',
+      'e-mail': '',
+    },
   ];
+  void addcontact(String name, String phone, String email) {
+    setState(() {
+       contactdetail.add({'Name': name,'photo':'Images/random.jpg', 'num': phone, 'e-mail': email});
+    });
+   
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+        backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: const Text(
@@ -49,7 +92,12 @@ class _MainPageState extends State<MainPage> {
           ),
           actions: [
             IconButton(
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddPage(onSave: addcontact)));
+                },
                 icon: Icon(
                   Icons.add,
                   color: Colors.white,
@@ -86,17 +134,24 @@ class _MainPageState extends State<MainPage> {
                             padding: EdgeInsets.only(right: 3.0),
                             child: CircleAvatar(
                               radius: 60, // Adjust the radius as needed
-                              backgroundImage: AssetImage('${contact['photo']}'),
+                              backgroundImage:
+                                  AssetImage('${contact['photo']}'),
                             ),
                           ),
-                          
-                          title: Text("${contact['Name']}",style: TextStyle(fontSize: 20,color: Colors.white),),
+                          title: Text(
+                            "${contact['Name']}",
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          ),
                           tileColor: Color.fromARGB(118, 128, 125, 125),
-                          onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => ContactDetailPage(
-                            name: contact['Name'],
-                            photo: contact['photo'],
-                            num: contact['num'],
-                          )));
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ContactDetailPage(
+                                          name: contact['Name'],
+                                          photo: contact['photo'],
+                                          num: contact['num'],
+                                        )));
                           },
                         ),
                       );

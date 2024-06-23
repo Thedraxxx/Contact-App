@@ -17,7 +17,6 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        
       ),
       body: Center(
         child: Padding(
@@ -109,7 +108,7 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
                   onPressed: () {},
                   child: Text(
                     'Storage locations',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ),
               ),
@@ -122,19 +121,21 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
         height: 100,
         color: Colors.black,
         child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               children: [
                 IconButton(
-                    onPressed: null,
+                    onPressed: () {},
                     icon: Icon(
                       Icons.mode_edit_outlined,
                       size: 30,
                       color: Colors.white,
                     )),
-                Text('edit',style: TextStyle(color: Colors.grey[700],)),
-                
+                Text('edit',
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                    )),
               ],
             ),
             Column(
@@ -146,7 +147,10 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
                       size: 30,
                       color: Colors.white,
                     )),
-                Text('share',style: TextStyle(color: Colors.grey[700],)),
+                Text('share',
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                    )),
               ],
             ),
             Column(
@@ -158,7 +162,12 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
                       size: 30,
                       color: Colors.white,
                     )),
-                Text('more',style: TextStyle(color: Colors.grey[700],),),
+                Text(
+                  'more',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                  ),
+                ),
               ],
             ),
           ],
