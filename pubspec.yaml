@@ -45,7 +45,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -60,7 +60,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/Images/
+    - assets/images/roshan.jpg
+    - assets/images/aish.jpg
+    - assets/images/dipson.jpg
+    - assets/images/manis.jpg
+    - assets/images/prabesh.jpg
+    - assets/images/richa.jpg
+    - assets/images/tiks.jpg
+    - assets/images/random.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

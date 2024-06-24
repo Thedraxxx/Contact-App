@@ -31,52 +31,52 @@ class _MainPageState extends State<MainPage> {
   List contactdetail = [
     {
       'Name': 'Roshan Gurung',
-      'photo': 'Images/roshan.jpg',
+      'photo': 'assets/images/roshan.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
     {
       "Name": 'Aishawarya Adhikari',
-      'photo': 'Images/aish.jpg',
+      'photo': 'assets/images/aish.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
     {
       'Name': 'Dipsan Kadariya',
-      'photo': 'Images/dipson.png',
+      'photo': 'assets/images/dipson.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
     {
       'Name': 'Manish Shrestha',
-      'photo': 'Images/manis.jpg',
+      'photo': 'assets/images/manis.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
     {
       'Name': 'Prabesh Nepal',
-      'photo': 'Images/prabesh.jpeg',
+      'photo': 'assets/images/prabesh.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
     {
       'Name': 'Richa Adhikari',
-      'photo': 'Images/richa.jpg',
+      'photo': 'assets/images/richa.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
     {
       'Name': 'Tiks Chimariya',
-      'photo': 'Images/tiks.jpg',
+      'photo': 'assets/images/tiks.jpg',
       'num': '9803030303',
       'e-mail': '',
     },
   ];
+  
   void addcontact(String name, String phone, String email) {
     setState(() {
-       contactdetail.add({'Name': name,'photo':'Images/random.jpg', 'num': phone, 'e-mail': email});
+      contactdetail.add({'Name': name, 'photo': 'assets/images/random.jpg', 'num': phone, 'e-mail': email});
     });
-   
   }
 
   @override
@@ -126,21 +126,21 @@ class _MainPageState extends State<MainPage> {
                     itemBuilder: (context, index) {
                       final contact = contactdetail[index];
                       return Padding(
-                        padding: const EdgeInsets.all(9),
+                        padding: const EdgeInsets.all(10),
                         child: ListTile(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(30)),
                           leading: Container(
-                            padding: EdgeInsets.only(right: 3.0),
+                            padding: EdgeInsets.only(right: 2),
                             child: CircleAvatar(
-                              radius: 60, // Adjust the radius as needed
+                              radius: 20, // Adjust the radius as needed
                               backgroundImage:
                                   AssetImage('${contact['photo']}'),
                             ),
                           ),
                           title: Text(
                             "${contact['Name']}",
-                            style: TextStyle(fontSize: 20, color: Colors.white),
+                            style: TextStyle(fontSize: 15, color: Colors.white),
                           ),
                           tileColor: Color.fromARGB(118, 128, 125, 125),
                           onTap: () {

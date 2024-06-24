@@ -91,7 +91,7 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
                   onPressed: () {},
                   child: Text(
                     'History',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    style: TextStyle(fontSize: 17, color: Colors.white),
                   ),
                 ),
               ),
