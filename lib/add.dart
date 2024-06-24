@@ -136,19 +136,25 @@ class _AddPageState extends State<AddPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            
+            Container(
+              child: ElevatedButton(
+                style: ButtonStyle(backgroundColor: WidgetStateProperty.all<Color>(Colors.grey.shade700)),
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  
+                  child: Text(
+                    'Cancel',
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  )),
+            ),
             ElevatedButton(
-                onPressed: (){
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Cancel',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                )),
-            ElevatedButton(
+              style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.grey.shade700)),
                 onPressed: save,
                 child: Text(
                   'Save',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.black54, fontSize: 20),
                 )),
           ],
         ),
